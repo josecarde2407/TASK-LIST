@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gestor de Tareas - Tickets</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container" role="main" aria-labelledby="pageTitle">
+    <h1 id="pageTitle">Gestor de Tareas - Tickets</h1>
+    <div class="top-area">
+      <form id="taskForm" aria-label="Formulario para agregar nuevas tareas" autocomplete="off">
+        <div class="new-task">
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="Escribe una nueva tarea..."
+            aria-required="true"
+            aria-describedby="taskHelp"
+          />
+          <button type="submit" class="add-btn" aria-label="Agregar tarea">Añadir</button>
+        </div>
+      </form>
+    </div>
+    <div class="filter-container" aria-label="Filtros de búsqueda y fecha de tareas">
+      <h2>Filtros de búsqueda</h2>
+      <div class="filter-task">
+        <div class="filter-group">
+          <label for="searchInput" class="filter-label">Buscar por texto</label>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Filtrar tareas por texto..."
+            aria-label="Filtro de búsqueda de tareas por texto"
+            autocomplete="off"
+          />
+        </div>
+        <div class="filter-group">
+          <label for="dateFrom" class="filter-label">Fecha desde</label>
+          <input
+            type="date"
+            id="dateFrom"
+            aria-label="Fecha desde"
+            title="Filtrar fecha desde"
+          />
+        </div>
+        <div class="filter-group">
+          <label for="dateTo" class="filter-label">Fecha hasta</label>
+          <input
+            type="date"
+            id="dateTo"
+            aria-label="Fecha hasta"
+            title="Filtrar fecha hasta"
+          />
+        </div>
+      </div>
+    </div>
+    <ul id="taskList" class="task-list" aria-live="polite" aria-relevant="additions removals"></ul>
+    <div class="stats" aria-label="Indicadores de tareas">
+      <div>
+        <div class="icon" aria-hidden="true">🗂️</div>
+        <div class="label">Tareas colocadas</div>
+        <div id="totalTasks" class="value" aria-live="polite">0</div>
+      </div>
+      <div>
+        <div class="icon" aria-hidden="true">⏳</div>
+        <div class="label">Lead time (hrs)</div>
+        <div class="leadtime-bar" aria-hidden="true">
+          <div class="leadtime-fill" id="leadtimeFill"></div>
+        </div>
+        <div id="leadTime" class="leadtime-value" aria-live="polite">0</div>
+      </div>
+    </div>
+  </div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
